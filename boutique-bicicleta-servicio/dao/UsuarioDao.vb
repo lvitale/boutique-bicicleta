@@ -4,20 +4,16 @@ Public Class UsuarioDao
     Inherits DBConector
     Implements IDao(Of Usuario)
 
-
-
-
     Public Function consultar(id As Integer) As Usuario Implements IDao(Of Usuario).consultar
-        Return
-
+        Return Nothing
     End Function
 
     Public Function consultar(filtro As Usuario) As IEnumerable(Of Usuario) Implements IDao(Of Usuario).consultar
-
+        Return Nothing
     End Function
 
     Public Function consultarUno(filtro As Usuario) As Usuario Implements IDao(Of Usuario).consultarUno
-
+        Return Nothing
     End Function
 
     Public Sub eliminar(filtro As Usuario) Implements IDao(Of Usuario).eliminar
