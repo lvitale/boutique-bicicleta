@@ -2,8 +2,8 @@
     Private _codigo As String
     Private _descripcion As String
 
-    Public MustInherit Function tieneHijos() As Boolean
-    Public MustInherit Function verificar(codigo As String) As Boolean
+    Public MustOverride Function tieneHijos() As Boolean
+    Public MustOverride Function verificar(codigo As String) As Boolean
 
     Public Property codigo() As String
         Get

@@ -11,6 +11,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "boutique-bicicleta-negocio"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "boutique-bicicleta-conectordb", "boutique-bicicleta-conectordb\boutique-bicicleta-conectordb.vbproj", "{5611A8C4-4211-4D3A-B3B5-32B562CD7454}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "boutique-bicicleta-excepcion", "boutique-bicicleta-excepcion\boutique-bicicleta-excepcion.vbproj", "{C73A76D1-FCE1-4705-84E3-9409245294E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5611A8C4-4211-4D3A-B3B5-32B562CD7454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5611A8C4-4211-4D3A-B3B5-32B562CD7454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5611A8C4-4211-4D3A-B3B5-32B562CD7454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C73A76D1-FCE1-4705-84E3-9409245294E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C73A76D1-FCE1-4705-84E3-9409245294E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C73A76D1-FCE1-4705-84E3-9409245294E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C73A76D1-FCE1-4705-84E3-9409245294E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
