@@ -64,7 +64,17 @@
   <ItemGroup>
     <Compile Include="dao\IDao.vb" />
     <Compile Include="dao\UsuarioDao.vb" />
+    <Compile Include="entidad\Bitacora.vb" />
+    <Compile Include="entidad\DigitoVerificadorVertical.vb" />
+    <Compile Include="entidad\GrupoPermiso.vb" />
+    <Compile Include="entidad\Idioma.vb" />
+    <Compile Include="entidad\Leyenda.vb" />
+    <Compile Include="entidad\Permiso.vb" />
+    <Compile Include="entidad\PermisoBase.vb" />
     <Compile Include="entidad\Usuario.vb" />
+    <Compile Include="enum\Mensaje.vb" />
+    <Compile Include="excepcion\ServicioException.vb" />
+    <Compile Include="excepcion\UsuarioException.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -80,6 +90,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="seguridad\Encriptador.vb" />
+    <Compile Include="seguridad\Sesion.vb" />
+    <Compile Include="validador\UsuarioValidador.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -100,7 +113,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="constante\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\boutique-bicicleta-conectordb\boutique-bicicleta-conectordb.vbproj">
       <Project>{5611a8c4-4211-4d3a-b3b5-32b562cd7454}</Project>
