@@ -62,9 +62,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="constante\Mensaje.vb" />
+    <Compile Include="constante\ServicioConstante.vb" />
+    <Compile Include="dao\DigitoVerificadorVerticalDao.vb" />
     <Compile Include="dao\IDao.vb" />
     <Compile Include="dao\UsuarioDao.vb" />
     <Compile Include="entidad\Bitacora.vb" />
+    <Compile Include="entidad\Correo.vb" />
     <Compile Include="entidad\DigitoVerificadorVertical.vb" />
     <Compile Include="entidad\GrupoPermiso.vb" />
     <Compile Include="entidad\Idioma.vb" />
@@ -72,9 +76,18 @@
     <Compile Include="entidad\Permiso.vb" />
     <Compile Include="entidad\PermisoBase.vb" />
     <Compile Include="entidad\Usuario.vb" />
-    <Compile Include="enum\Mensaje.vb" />
+    <Compile Include="excepcion\DaoException.vb" />
+    <Compile Include="excepcion\IntegracionException.vb" />
     <Compile Include="excepcion\ServicioException.vb" />
     <Compile Include="excepcion\UsuarioException.vb" />
+    <Compile Include="gestor\GestorBitacora.vb" />
+    <Compile Include="gestor\GestorCorreoElecronico.vb" />
+    <Compile Include="gestor\GestorDigitoVerificador.vb" />
+    <Compile Include="gestor\GestorErrores.vb" />
+    <Compile Include="gestor\GestorUsuario.vb" />
+    <Compile Include="gestor\IGestorServicio.vb" />
+    <Compile Include="gestor\Login.vb" />
+    <Compile Include="enum\Log.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -113,13 +126,15 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="constante\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\boutique-bicicleta-conectordb\boutique-bicicleta-conectordb.vbproj">
       <Project>{5611a8c4-4211-4d3a-b3b5-32b562cd7454}</Project>
       <Name>boutique-bicicleta-conectordb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\boutique-bicicleta-utils\boutique-bicicleta-utils.vbproj">
+      <Project>{e01512c1-e8fa-4d62-94fc-c2191f8ad782}</Project>
+      <Name>boutique-bicicleta-utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

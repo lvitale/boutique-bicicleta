@@ -1,4 +1,4 @@
-﻿Public Class ServicioException
+﻿Public Class IntegracionException
     Inherits Exception
     Public Sub New(message As String)
         MyBase.New(message)

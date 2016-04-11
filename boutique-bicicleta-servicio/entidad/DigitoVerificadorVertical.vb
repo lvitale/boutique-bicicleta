@@ -3,6 +3,13 @@
     Private _nombreTabla As String
     Private _dvv As String
 
+    Public Sub New(tabla As String)
+        _nombreTabla = tabla
+    End Sub
+    Public Sub New(tabla As String, dvv As String)
+        _nombreTabla = tabla
+        _dvv = dvv
+    End Sub
 
     Public Property id() As Int32
         Get

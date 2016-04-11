@@ -12,6 +12,34 @@
     Private _perfil As PermisoBase
     Private _dvh As String
 
+    Public Overrides Function ToString() As String
+        Return _nombre
+    End Function
+
+    Public Overrides Function Equals(value As Object) As Boolean
+
+        Dim isEqual As Boolean = False
+        Try
+            Dim ingresado As Usuario = CType(value, Usuario)
+            If ingresado IsNot Nothing Then
+                If nombre.Equals(ingresado.nombre) And clave.Equals(ingresado.clave) Then
+                    isEqual = True
+                End If
+            End If
+
+        Catch ex As Exception
+            Console.Write(ex.Message)
+        End Try
+        Return isEqual
+    End Function
+
+    Public Sub incrementarIntentos()
+        _intentos = _intentos + 1
+        If _intentos > ServicioConstante.CANTIDAD_INTENTOS_USUARIO Then
+            _activo = False
+        End If
+    End Sub
+
     Public Property id() As Long
         Get
             Return _id
@@ -75,7 +103,7 @@
         End Set
     End Property
 
-   
+
 
     Public Property idioma() As Idioma
         Get

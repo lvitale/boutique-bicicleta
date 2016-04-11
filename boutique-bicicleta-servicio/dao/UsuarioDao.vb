@@ -3,6 +3,15 @@
 Public Class UsuarioDao
     Inherits DBConector
     Implements IDao(Of Usuario)
+    Private Shared instance As UsuarioDao = New UsuarioDao()
+
+    Private Sub New()
+
+    End Sub
+
+    Public Shared Function getInstance() As UsuarioDao
+        Return instance
+    End Function
 
     Public Function consultar(id As Integer) As Usuario Implements IDao(Of Usuario).consultar
         Return Nothing

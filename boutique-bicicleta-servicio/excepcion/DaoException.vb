@@ -1,4 +1,4 @@
-﻿Public Class ServicioException
+﻿Public Class DaoException
     Inherits Exception
     Public Sub New(message As String)
         MyBase.New(message)

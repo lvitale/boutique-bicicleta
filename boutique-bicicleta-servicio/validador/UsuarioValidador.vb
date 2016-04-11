@@ -1,4 +1,6 @@
-﻿Public Class UsuarioValidador
+﻿Imports boutique_bicicleta_utils
+
+Public Class UsuarioValidador
 
     Private Shared instance As UsuarioValidador = New UsuarioValidador()
 
@@ -10,40 +12,34 @@
         Return instance
     End Function
 
-    Public Sub validar(nombre As String, clave As String)
-        If StringUtils.isNullOrEmpty(nombre) Or StringUtils.isNullOrEmpty(clave) Then
+    Public Sub validar(usuario As Usuario)
+        If (usuario Is Nothing) Then
+            Throw New UsuarioException(Mensaje.WARNING_GENERAL_601)
+        End If
+        If (StringUtils.isNullOrEmpty(usuario.nombre) Or StringUtils.isNullOrEmpty(usuario.clave)) Then
 
-               Throw new UsuarioException(ErrorConstante.WARNING_USUARIO_503.ToString(), ErrorConstante.WARNING_USUARIO_503);
+            Throw New UsuarioException(Mensaje.WARNING_USUARIO_503)
+
+        End If
+    End Sub
+
+    Public Sub validarExistente(usuario As Usuario)
+        If (usuario Is Nothing) Then
+            Throw New UsuarioException(Mensaje.WARNING_GENERAL_601)
+        End If
+
+        If (StringUtils.isNullOrEmpty(usuario.nombre) Or StringUtils.isNullOrEmpty(usuario.clave) Or StringUtils.isNullOrEmpty(usuario.intentos.ToString())) Then
+
+            Throw New UsuarioException(Mensaje.WARNING_GENERAL_601)
+        End If
+
+        If (StringUtils.isNullOrEmpty(usuario.idioma.cultura) Or StringUtils.isNullOrEmpty(usuario.perfil.codigo)) Then
+
+            Throw New UsuarioException(Mensaje.WARNING_GENERAL_601)
+
+        End If
 
     End Sub
 
-       public void validate(Usuario usuario)
-       {
-           if (usuario == null)
-           {
-               throw new UsuarioException(ErrorConstante.WARNING_GENERAL_601.ToString(), ErrorConstante.WARNING_GENERAL_601);
-           }
-           if (StringUtils.isNullOrEmpty(usuario.nombre) || StringUtils.isNullOrEmpty(usuario.clave) || StringUtils.isNullOrEmpty(usuario.intentos.ToString()))
-           {
-               throw new UsuarioException(ErrorConstante.WARNING_GENERAL_601.ToString(), ErrorConstante.WARNING_GENERAL_601);
-           }
-           if (StringUtils.isNullOrEmpty(usuario.idioma.cultura) || StringUtils.isNullOrEmpty(usuario.perfil.codigo) )
-           {
-               throw new UsuarioException(ErrorConstante.WARNING_GENERAL_601.ToString(), ErrorConstante.WARNING_GENERAL_601);
-           }
-       }
 
-       public Boolean existe(String usuario) {
-        Boolean existe = false;
-        try{
-            Usuario usu = UsuarioDao.getInstance().consultarUno(new Usuario(usuario));
-            if(usu !=null && !StringUtils.isNullOrEmpty(usu.nombre))
-            {
-                existe=true;
-            }
-        }catch(Exception ex){
-             Console.Write(ex.Message);
-         }
-           return existe;
-       }
 End Class

@@ -3,8 +3,16 @@ Imports System.Security.Cryptography
 
 Public Class Encriptador
 
-    Private key As String = "boutique"
+    Private key As String = ServicioConstante.CLAVE_ENCRIPTACION
+    Private Shared instance As Encriptador = New Encriptador()
 
+    Private Sub New()
+
+    End Sub
+
+    Public Shared Function getInstance() As Encriptador
+        Return instance
+    End Function
     Public Function encriptar(valor As String) As String
         Dim md5 As MD5 = md5.Create()
         Dim data As Byte() = md5.ComputeHash(Encoding.UTF8.GetBytes(valor))
