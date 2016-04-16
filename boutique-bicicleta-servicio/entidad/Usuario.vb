@@ -11,6 +11,14 @@
 
     Private _perfil As PermisoBase
     Private _dvh As String
+    Public Sub New()
+
+    End Sub
+    Public Sub New(nombre As String, passsword As String)
+        _nombre = nombre
+        _clave = passsword
+    End Sub
+
 
     Public Overrides Function ToString() As String
         Return _nombre
